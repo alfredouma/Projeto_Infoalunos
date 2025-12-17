@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfoAlunos - Serviço de Informação dos Alunos</title>
+    <style>
+        :root {
+            --cor-primaria: #3399ff;
+            --cor-secundaria: white;
+            --cor-terciaria: #003d7a;
+            --cor-cinzento: #6c757d;
+            --cor-verde: #198754;
+            --cor-vermelho: #dc3545;
+            --cor-laranja: #ffa500;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, var(--cor-terciaria), var(--cor-primaria));
+            font-family: 'Sage UI', 'Roboto', 'Open Sans', sans-serif;
+            font-size: 16px;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 420px;
+            background-color: var(--cor-secundaria);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+            text-align: center;
+        }
+
+        .logo {
+            width: 120px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+
+        .site-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--cor-terciaria);
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-size: 0.9rem;
+            color: var(--cor-terciaria);
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--cor-cinzento);
+            border-radius: 6px;
+            font-size: 0.95rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--cor-primaria);
+            box-shadow: 0 0 6px rgba(51,153,255,0.4);
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: var(--cor-terciaria);
+            color: var(--cor-secundaria);
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        .btn-login:hover {
+            background-color: var(--cor-primaria);
+        }
+
+        .error-message {
+            color: var(--cor-vermelho);
+            margin: 0.75rem 0;
+            font-size: 0.85rem;
+            text-align: left;
+            line-height: 1.4;
+        }
+
+        .recover-link {
+            color: var(--cor-terciaria);
+            text-decoration: none;
+            font-size: 0.85rem;
+            margin-top: 1rem;
+            display: inline-block;
+            transition: color 0.3s;
+        }
+
+        .recover-link:hover {
+            color: var(--cor-laranja);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <main class="login-container">
+        <h1 class="site-title">Faça o seu Login</h1>
+        
+        <form action="/paginas/Geral/home.html" method="post">
+            <div class="form-group">
+                <label for="user" class="form-label">Utilizador:</label>
+                <input type="text" id="user" class="form-control" placeholder="Utilizador" required>
+            </div>
+            <div class="form-group">
+                <label for="password" class="form-label">Palavra-passe:</label>
+                <input type="password" id="password" class="form-control" placeholder="Palavra-passe" required>
+            </div>
+
+            <button type="submit" class="btn-login">Entrar</button>
+        </form>
+
+        <a href="#" class="recover-link">Recuperar password</a>
+    </main>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Erro - InfoAlunos</title>
+  <style>
+    :root {
+      --cor-primaria: #3399ff;
+      --cor-secundaria: white;
+      --cor-terciaria: #003d7a;
+      --cor-cinzento: #6c757d;
+      --cor-verde: #198754;
+      --cor-vermelho: #dc3545;
+      --cor-laranja: #ffa500;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', 'Roboto', 'Open Sans', sans-serif;
+      background: linear-gradient(135deg, var(--cor-terciaria), var(--cor-primaria));
+      color: var(--cor-secundaria);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .error-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 700px;
+      padding: 3rem;
+      background: rgba(255,255,255,0.1);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .error-icon {
+      font-size: 5rem;
+      color: var(--cor-vermelho);
+      margin-bottom: 1rem;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.7; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .error-code {
+      font-size: 6rem;
+      font-weight: bold;
+      color: var(--cor-secundaria);
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+      margin-bottom: 1rem;
+    }
+
+    .error-message {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--cor-laranja);
+    }
+
+    .error-description {
+      font-size: 1rem;
+      color: var(--cor-secundaria);
+      margin-bottom: 2rem;
+      line-height: 1.5;
+    }
+
+    .btn-home {
+      display: inline-block;
+      padding: 0.9rem 2rem;
+      background-color: var(--cor-laranja);
+      color: var(--cor-secundaria);
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .btn-home:hover {
+      background-color: var(--cor-vermelho);
+      transform: translateY(-2px);
+    }
+
+    /* Elementos decorativos */
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      animation: float 6s infinite ease-in-out;
+    }
+
+    .circle.small {
+      width: 80px;
+      height: 80px;
+      top: -20px;
+      left: -20px;
+    }
+
+    .circle.large {
+      width: 150px;
+      height: 150px;
+      bottom: -40px;
+      right: -40px;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="error-wrapper">
+    <div class="circle small"></div>
+    <div class="circle large"></div>
+
+    <div class="error-icon">⚠️</div>
+    <div class="error-code">404</div>
+    <div class="error-message">Página não encontrada</div>
+    <div class="error-description">
+      O recurso que procura não existe ou foi removido.<br>
+      Volte à página inicial para continuar a navegar.
+    </div>
+    <a href="/paginas/Geral/home.html" class="btn-home">Voltar ao Início</a>
+  </div>
+</body>
+</html>
