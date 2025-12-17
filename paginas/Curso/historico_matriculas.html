@@ -199,8 +199,6 @@
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.08);
     }
-
-    
     @media (max-width: 360px) {
       .main-grid {
         grid-template-columns: 1fr;
@@ -347,7 +345,7 @@
 
   <!-- Main Container -->
   <div class="container">
-<!-- NAVBAR LATERAL -->
+   <!-- NAVBAR LATERAL -->
 <nav class="menu-lateral">
   <ul>
 
@@ -442,165 +440,126 @@
 </nav>
 
 <!-- Content -->
-<div class="content" style="max-width: 1000px; margin: 0 auto;">
-  <div class="card">
+<div class="content">
 
-    <!-- Título -->
-    <div class="card-title" style="font-size: 1.2rem; font-weight: bold; margin-bottom: 1rem;">
-      Pesquisa de Disciplinas
+  <!-- 🔍 Pesquisa de Cursos -->
+  <div class="card">
+    <div class="card-title">🔍 Pesquisa de Cursos</div>
+    <div class="card-content" style="padding: 1rem;">
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem;">
+        <div style="flex: 1; min-width: 200px;">
+          <label for="curso" style="font-size: 0.85rem; color: var(--cor-terciaria); font-weight: 500;">Curso</label>
+          <input id="curso" type="text" style="width: 100%; padding: 0.4rem; border: 1px solid #ccc; border-radius: 4px;">
+        </div>
+        <div style="flex: 1; min-width: 150px;">
+          <label for="ano" style="font-size: 0.85rem; color: var(--cor-terciaria); font-weight: 500;">Ano Lectivo</label>
+          <select id="ano" style="width: 100%; padding: 0.4rem; border: 1px solid #ccc; border-radius: 4px;">
+            <option>2025/26</option>
+            <option>2024/25</option>
+            <option>2023/24</option>
+          </select>
+        </div>
+        <div style="align-self: flex-end;">
+          <button style="background-color: var(--cor-primaria); color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; font-size: 0.85rem; cursor: pointer;">
+            Pesquisar...
+          </button>
+        </div>
+      </div>
     </div>
+  </div>
+
+  <!-- 📘 Matrículas / Inscrições em Cursos -->
+  <div class="card">
+    <div class="card-title" style="display: flex; justify-content: space-between; align-items: center;">
+      <span>📘 Matrículas / Inscrições em Cursos</span>
+      <div style="display: flex; gap: 1rem; font-size: 0.85rem;">
+        <a href="#" style="color: var(--cor-primaria); text-decoration: underline;">Ir para Documentos Académicos</a>
+        <a href="#" style="color: var(--cor-primaria); text-decoration: underline;">Ajuda/Help</a>
+      </div>
+    </div>
+    <div class="card-content" style="padding: 1rem;">
+      <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem;">
+        <thead>
+          <tr>
+            <th style="background-color: var(--cor-cinzento); color: white; padding: 0.5rem;">LY</th>
+            <th style="background-color: var(--cor-cinzento); color: white; padding: 0.5rem;">Curso</th>
+            <th style="background-color: var(--cor-cinzento); color: white; padding: 0.5rem;">Ramo</th>
+            <th style="background-color: var(--cor-cinzento); color: white; padding: 0.5rem;">ALP</th>
+            <th style="background-color: var(--cor-cinzento); color: white; padding: 0.5rem;">Ingresso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding: 0.5rem;">2025/26</td>
+            <td style="padding: 0.5rem;">Tecnologias e Programação de Sistemas de Informação</td>
+            <td style="padding: 0.5rem;">Sem Ramos - Especialidades</td>
+            <td style="padding: 0.5rem;">2020/21</td>
+            <td style="padding: 0.5rem;">Titulares de curso de ensino secundário ou de habilitação legalmente equivalente</td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="margin-top: 1rem; font-size: 0.75rem; color: var(--cor-cinzento); text-align: right;">
+        AL - Ano Lectivo | ALP - Ano Lectivo do Plano
+      </div>
+    </div>
+  </div>
+
+<!-- 🧾 Inscrições em Disciplinas -->
+<div class="card">
+  <div class="card-title">🧾 Inscrições em Disciplinas</div>
+
+  <div class="card-content" style="padding: 1rem;">
 
     <!-- Filtros -->
-    <div style="display: grid; grid-template-columns: 1fr 2fr auto; gap: 1rem; margin-bottom: 2rem;">
-      <div>
-        <label style="font-weight: bold;">Ano Lectivo</label><br>
-        <select style="width: 100%; padding: 0.4rem;">
-          <option selected>2025/26</option>
+    <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem;">
+      <div style="flex: 1; min-width: 200px;">
+        <label for="avaliacao" style="font-size: 0.85rem; color: var(--cor-terciaria); font-weight: 500;">
+          Tipo de Avaliação
+        </label>
+        <select id="avaliacao" style="width: 100%; padding: 0.4rem; border: 1px solid #ccc; border-radius: 4px;">
+          <option>Época Normal</option>
+          <option>Época de Recurso</option>
+          <option>Época Especial</option>
         </select>
       </div>
-      <div>
-        <label style="font-weight: bold;">Disciplina</label><br>
-        <input type="text" value="Design Hipermédia_CTeSP_TPSI [ S1 ]" style="width: 100%; padding: 0.4rem;">
-      </div>
-      <div style="align-self: end;">
-        <button style="padding: 0.5rem 1rem; background-color: var(--cor-primaria); color: white; border: none; border-radius: 4px;">
+
+      <div style="align-self: flex-end;">
+        <button style="background-color: var(--cor-primaria); color: white; border: none;
+                       padding: 0.5rem 1rem; border-radius: 4px; font-size: 0.85rem; cursor: pointer;">
           Pesquisar...
         </button>
       </div>
     </div>
 
-    <!-- Título do calendário -->
-    <div class="card-title" style="font-size: 1.2rem; font-weight: bold; text-align: center; margin-bottom: 1rem;">
-      Calendário
-    </div>
+    <!-- Tabela de Disciplinas -->
+    <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem;">
+      <thead>
+        <tr>
+          <th style="background-color: var(--cor-cinzento); color: white; padding: 0.5rem;">Disciplina</th>
+          <th style="background-color: var(--cor-cinzento); color: white; padding: 0.5rem;">A</th>
+          <th style="background-color: var(--cor-cinzento); color: white; padding: 0.5rem;">S</th>
+          <th style="background-color: var(--cor-cinzento); color: white; padding: 0.5rem;">Época</th>
+          <th style="background-color: var(--cor-cinzento); color: white; padding: 0.5rem;">Data Insc.</th>
+        </tr>
+      </thead>
 
-    <!-- Calendário -->
-    <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; font-size: 0.9rem; text-align: left;">
-      <!-- Cabeçalho -->
-      <div class="dia-header">Domingo</div>
-      <div class="dia-header">Segunda</div>
-      <div class="dia-header">Terça</div>
-      <div class="dia-header">Quarta</div>
-      <div class="dia-header">Quinta</div>
-      <div class="dia-header">Sexta</div>
-      <div class="dia-header">Sábado</div>
+      <tbody>
+        <tr><td>Técnicas de Expressão do Português</td><td>1</td><td>S1</td><td>Época Normal</td><td>2025-09-18</td></tr>
+        <tr><td>Matemática</td><td>1</td><td>S1</td><td>Época Normal</td><td>2025-09-18</td></tr>
+        <tr><td>Introdução à Programação</td><td>1</td><td>S1</td><td>Época Normal</td><td>2025-09-18</td></tr>
+        <tr><td>Sistemas Operativos e Redes</td><td>1</td><td>S1</td><td>Época Normal</td><td>2025-09-18</td></tr>
+        <tr><td>Design Hipermédia</td><td>1</td><td>S1</td><td>Época Normal</td><td>2025-09-18</td></tr>
 
-      <!-- Primeira semana (começa na quarta-feira) -->
-      <div class="dia vazio"></div>
-      <div class="dia vazio"></div>
-      <div class="dia vazio"></div>
-      <div class="dia">
-        <div class="tarefa">1</div>
-        <div class="evento">14:00 HAp_B Nº 13 S.2.26</div>
-        <div class="evento">16:00 TP_A Nº 11 2.24</div>
-      </div>
-      <div class="dia"><div class="tarefa">2</div></div>
-      <div class="dia"><div class="tarefa">3</div></div>
-      <div class="dia"><div class="tarefa">4</div></div>
-
-      <!-- Segunda semana -->
-      <div class="dia"><div class="tarefa">5</div></div>
-      <div class="dia"><div class="tarefa">6</div></div>
-      <div class="dia">
-        <div class="tarefa">7</div>
-        <div class="evento">17:30 HAp_A Nº 11 2.29</div>
-      </div>
-      <div class="dia">
-        <div class="tarefa">8</div>
-        <div class="evento">16:00 TP_A Nº 12 2.24</div>
-      </div>
-      <div class="dia">
-        <div class="tarefa">9</div>
-        <div class="evento">14:00 HAp_B Nº 14 0.</div>
-      </div>
-      <div class="dia"><div class="tarefa">10</div></div>
-      <div class="dia"><div class="tarefa">11</div></div>
-
-      <!-- Terceira semana -->
-      <div class="dia"><div class="tarefa">12</div></div>
-      <div class="dia"><div class="tarefa">13</div></div>
-      <div class="dia"><div class="tarefa">14</div></div>
-      <div class="dia">
-        <div class="tarefa">15</div>
-        <div class="evento">16:00 TP_A Nº 13 2.24</div>
-      </div>
-      <div class="dia">
-        <div class="tarefa">16</div>
-        <div class="evento">14:00 HAp_B Nº 15 0.</div>
-      </div>
-      <div class="dia"><div class="tarefa">17</div></div>
-      <div class="dia"><div class="tarefa">18</div></div>
-
-      <!-- Quarta semana -->
-      <div class="dia"><div class="tarefa">19</div></div>
-      <div class="dia"><div class="tarefa">20</div></div>
-      <div class="dia"><div class="tarefa">21</div></div>
-      <div class="dia"><div class="tarefa">22</div></div>
-      <div class="dia"><div class="tarefa">23</div></div>
-      <div class="dia"><div class="tarefa">24</div></div>
-      <div class="dia"><div class="tarefa">25</div></div>
-
-      <!-- Quinta semana -->
-      <div class="dia"><div class="tarefa">26</div></div>
-      <div class="dia"><div class="tarefa">27</div></div>
-      <div class="dia"><div class="tarefa">28</div></div>
-      <div class="dia"><div class="tarefa">29</div></div>
-      <div class="dia"><div class="tarefa">30</div></div>
-      <div class="dia"><div class="tarefa">31</div></div>
-    </div>
+        <tr><td>Programação Orientada por Objetos</td><td>1</td><td>S2</td><td>Época Normal</td><td>2025-09-18</td></tr>
+        <tr><td>Desenvolvimento Web - Back-End</td><td>1</td><td>S2</td><td>Época Normal</td><td>2025-09-18</td></tr>
+        <tr><td>Desenvolvimento Web - Front-End</td><td>1</td><td>S2</td><td>Época Normal</td><td>2025-09-18</td></tr>
+        <tr><td>Inglês Técnico</td><td>1</td><td>S2</td><td>Época Normal</td><td>2025-09-18</td></tr>
+        <tr><td>Sistemas Gestores de Bases de Dados I</td><td>1</td><td>S2</td><td>Época Normal</td><td>2025-09-18</td></tr>
+      </tbody>
+    </table>
 
   </div>
 </div>
-
-<!-- Estilos -->
-<style>
-  .dia-header {
-    font-weight: bold;
-    text-align: center;
-    padding: 0.5rem;
-    background-color: var(--cor-cinzento);
-    color: white;
-    border-radius: 4px;
-  }
-
-  .dia {
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
-    min-height: 120px;
-    padding: 8px;
-    border-radius: 6px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    font-size: 0.85rem;
-  }
-
-  .dia.vazio {
-    background: transparent;
-    border: none;
-    min-height: 0;
-    padding: 0;
-  }
-
-  .tarefa {
-    position: absolute;
-    bottom: 6px;
-    right: 8px;
-    font-weight: bold;
-    font-size: 0.8rem;
-    color: #666;
-  }
-
-  .evento {
-    margin-top: 4px;
-    font-size: 0.75rem;
-    background-color: #e6f0ff;
-    padding: 2px 4px;
-    border-radius: 4px;
-  }
-</style>
-
 
 
 

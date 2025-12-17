@@ -199,8 +199,6 @@
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.08);
     }
-
-    
     @media (max-width: 360px) {
       .main-grid {
         grid-template-columns: 1fr;
@@ -326,6 +324,45 @@
   }
 }
 
+/* ALERTAS */
+
+
+.alerta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+.alerta svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.alerta-azul {
+  background: var(--cor-primaria);
+  color: var(--cor-secundaria);
+}
+
+.alerta-verde {
+  background: var(--cor-verde);
+  color: var(--cor-secundaria);
+}
+
+.alerta-amarelo {
+  background: var(--cor-cinzento);
+  color: var(--cor-secundaria);
+}
+
+.alerta-vermelho {
+  background: var(--cor-vermelho);
+  color: var(--cor-secundaria);
+}
+
 
 
   </style>
@@ -347,7 +384,7 @@
 
   <!-- Main Container -->
   <div class="container">
-<!-- NAVBAR LATERAL -->
+   <!-- NAVBAR LATERAL -->
 <nav class="menu-lateral">
   <ul>
 
@@ -441,167 +478,122 @@
   </ul>
 </nav>
 
-<!-- Content -->
-<div class="content" style="max-width: 1000px; margin: 0 auto;">
+   <!-- Content -->
+<div class="content">
   <div class="card">
 
     <!-- Título -->
-    <div class="card-title" style="font-size: 1.2rem; font-weight: bold; margin-bottom: 1rem;">
-      Pesquisa de Disciplinas
+    <div class="card-title">Curso - Planos de Conclusão</div>
+
+    <!-- Seleção de Curso -->
+    <div style="margin-bottom: 1rem;">
+      <label><strong>Curso</strong></label><br>
+      <select style="width: 100%; padding: 0.5rem;">
+        <option selected>Tecnologias e Programação de Sistemas de Informação (Curso Técnico Superior Profissional, 2025/26, Sem Ramos - Especialidades)</option>
+      </select>
     </div>
 
-    <!-- Filtros -->
-    <div style="display: grid; grid-template-columns: 1fr 2fr auto; gap: 1rem; margin-bottom: 2rem;">
+    <!-- Relatórios -->
+    <h3>Relatórios</h3>
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; margin-bottom: 1rem;">
       <div>
-        <label style="font-weight: bold;">Ano Lectivo</label><br>
-        <select style="width: 100%; padding: 0.4rem;">
+        <label><strong>Ano Lectivo</strong></label><br>
+        <select style="width: 100%; padding: 0.5rem;">
           <option selected>2025/26</option>
         </select>
       </div>
       <div>
-        <label style="font-weight: bold;">Disciplina</label><br>
-        <input type="text" value="Design Hipermédia_CTeSP_TPSI [ S1 ]" style="width: 100%; padding: 0.4rem;">
+        <label><strong>Relatório(s)</strong></label><br>
+        <select style="width: 100%; padding: 0.5rem;">
+          <option selected>Ficha de Aprovação para Bolonha</option>
+        </select>
       </div>
-      <div style="align-self: end;">
-        <button style="padding: 0.5rem 1rem; background-color: var(--cor-primaria); color: white; border: none; border-radius: 4px;">
-          Pesquisar...
-        </button>
+      <div>
+        <label><strong>Formato(s)</strong></label><br>
+        <select style="width: 100%; padding: 0.5rem;">
+          <option selected>PDF</option>
+        </select>
       </div>
     </div>
 
-    <!-- Título do calendário -->
-    <div class="card-title" style="font-size: 1.2rem; font-weight: bold; text-align: center; margin-bottom: 1rem;">
-      Calendário
+    <!-- Botão -->
+    <div style="text-align: right; margin-bottom: 2rem;">
+      <button style="padding: 0.6rem 1.2rem; background-color: var(--cor-primaria); color: white; border: none; border-radius: 4px;">Gerar Relatório &gt;&gt;</button>
     </div>
 
-    <!-- Calendário -->
-    <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; font-size: 0.9rem; text-align: left;">
-      <!-- Cabeçalho -->
-      <div class="dia-header">Domingo</div>
-      <div class="dia-header">Segunda</div>
-      <div class="dia-header">Terça</div>
-      <div class="dia-header">Quarta</div>
-      <div class="dia-header">Quinta</div>
-      <div class="dia-header">Sexta</div>
-      <div class="dia-header">Sábado</div>
-
-      <!-- Primeira semana (começa na quarta-feira) -->
-      <div class="dia vazio"></div>
-      <div class="dia vazio"></div>
-      <div class="dia vazio"></div>
-      <div class="dia">
-        <div class="tarefa">1</div>
-        <div class="evento">14:00 HAp_B Nº 13 S.2.26</div>
-        <div class="evento">16:00 TP_A Nº 11 2.24</div>
-      </div>
-      <div class="dia"><div class="tarefa">2</div></div>
-      <div class="dia"><div class="tarefa">3</div></div>
-      <div class="dia"><div class="tarefa">4</div></div>
-
-      <!-- Segunda semana -->
-      <div class="dia"><div class="tarefa">5</div></div>
-      <div class="dia"><div class="tarefa">6</div></div>
-      <div class="dia">
-        <div class="tarefa">7</div>
-        <div class="evento">17:30 HAp_A Nº 11 2.29</div>
-      </div>
-      <div class="dia">
-        <div class="tarefa">8</div>
-        <div class="evento">16:00 TP_A Nº 12 2.24</div>
-      </div>
-      <div class="dia">
-        <div class="tarefa">9</div>
-        <div class="evento">14:00 HAp_B Nº 14 0.</div>
-      </div>
-      <div class="dia"><div class="tarefa">10</div></div>
-      <div class="dia"><div class="tarefa">11</div></div>
-
-      <!-- Terceira semana -->
-      <div class="dia"><div class="tarefa">12</div></div>
-      <div class="dia"><div class="tarefa">13</div></div>
-      <div class="dia"><div class="tarefa">14</div></div>
-      <div class="dia">
-        <div class="tarefa">15</div>
-        <div class="evento">16:00 TP_A Nº 13 2.24</div>
-      </div>
-      <div class="dia">
-        <div class="tarefa">16</div>
-        <div class="evento">14:00 HAp_B Nº 15 0.</div>
-      </div>
-      <div class="dia"><div class="tarefa">17</div></div>
-      <div class="dia"><div class="tarefa">18</div></div>
-
-      <!-- Quarta semana -->
-      <div class="dia"><div class="tarefa">19</div></div>
-      <div class="dia"><div class="tarefa">20</div></div>
-      <div class="dia"><div class="tarefa">21</div></div>
-      <div class="dia"><div class="tarefa">22</div></div>
-      <div class="dia"><div class="tarefa">23</div></div>
-      <div class="dia"><div class="tarefa">24</div></div>
-      <div class="dia"><div class="tarefa">25</div></div>
-
-      <!-- Quinta semana -->
-      <div class="dia"><div class="tarefa">26</div></div>
-      <div class="dia"><div class="tarefa">27</div></div>
-      <div class="dia"><div class="tarefa">28</div></div>
-      <div class="dia"><div class="tarefa">29</div></div>
-      <div class="dia"><div class="tarefa">30</div></div>
-      <div class="dia"><div class="tarefa">31</div></div>
+    <!-- Mensagem de alerta -->
+    <div class="alerta alerta-vermelho" style="margin-top: 1rem;">
+      <svg><use href="#icon-info"></use></svg>
+      O aluno NÃO está em condições de CONCLUIR o curso selecionado. [ Sujeito A CONFIRMAÇÃO pela Unidade de Assuntos Académicos! ]
     </div>
+
+
+    <!-- Quadro de RESUMO -->
+    <h3>Quadro de RESUMO Verificação das Regras de Conclusão de Curso</h3>
+    <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-bottom: 2rem;">
+      <thead style="background-color: #d0e0ff;">
+        <tr>
+          <th style="padding: 0.5rem;">Regra</th>
+          <th>Área Científica</th>
+          <th>Nível</th>
+          <th>ECTS Mínimo</th>
+          <th>ECTS Aplicados</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1388</td><td>(178) Língua e Literatura Materna</td><td>(1)(2)(3)(5)(15)</td><td>5</td><td>0 ❌</td></tr>
+        <tr><td>1390</td><td>(10) Matemática</td><td>(1)(2)(3)(5)(15)</td><td>5.5</td><td>0 ❌</td></tr>
+        <tr><td>1391</td><td>(179) Línguas e Literaturas Estrangeiras</td><td>(1)(2)(3)(5)(15)</td><td>5</td><td>0 ❌</td></tr>
+        <tr><td>1392</td><td>(211) Ciências Informáticas</td><td>(1)(2)(3)(5)(15)</td><td>18</td><td>0 ❌</td></tr>
+        <tr><td>1393</td><td>(211) Ciências Informáticas</td><td>(1)(2)(3)(5)(15)</td><td>86.5</td><td>0 ❌</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Média Ponderada -->
+    <p style="font-weight: bold; font-size: 0.95rem; margin-bottom: 2rem;">Média Ponderada = 0</p>
+
+    <!-- Unidades Curriculares Utilizadas na Média -->
+    <h3>Unidades Curriculares Utilizadas na Média</h3>
+    <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-bottom: 2rem;">
+      <thead style="background-color: #f2f2f2;">
+        <tr>
+          <th style="padding: 0.5rem;">Unidade Curricular</th>
+          <th>Área Científica</th>
+          <th>Nível</th>
+          <th>Nota</th>
+          <th>ECTS da U.C.</th>
+          <th>ECTS Utilizados</th>
+          <th>ECTS Não Utilizados</th>
+          <th>Nota x ECTS da U.C.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td colspan="8" style="text-align: center; padding: 1rem;">Não Existem ECTS Aprovados</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Regras de Conclusão Curso -->
+    <h3>Regras de Conclusão Curso</h3>
+    <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem;">
+      <thead style="background-color: #f2f2f2;">
+        <tr>
+          <th style="padding: 0.5rem;">Área Científica</th>
+          <th>ECTS Mínimo</th>
+          <th>ECTS Aplicados</th>
+          <th>Unidades Curriculares Aprovadas</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Língua e Literatura Materna</td><td>5</td><td>0</td><td>❌ Não Existem ECTS Aprovados</td></tr>
+        <tr><td>Matemática</td><td>5.5</td><td>0</td><td>❌ Não Existem ECTS Aprovados</td></tr>
+        <tr><td>Línguas e Literaturas Estrangeiras</td><td>5</td><td>0</td><td>❌ Não Existem ECTS Aprovados</td></tr>
+        <tr><td>Ciências Informáticas</td><td>18</td><td>0</td><td>❌ Não Existem ECTS Aprovados</td></tr>
+        <tr><td>Ciências Informáticas</td><td>86.5</td><td>0</td><td>❌ Não Existem ECTS Aprovados</td></tr>
+      </tbody>
+    </table>
 
   </div>
 </div>
-
-<!-- Estilos -->
-<style>
-  .dia-header {
-    font-weight: bold;
-    text-align: center;
-    padding: 0.5rem;
-    background-color: var(--cor-cinzento);
-    color: white;
-    border-radius: 4px;
-  }
-
-  .dia {
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
-    min-height: 120px;
-    padding: 8px;
-    border-radius: 6px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    font-size: 0.85rem;
-  }
-
-  .dia.vazio {
-    background: transparent;
-    border: none;
-    min-height: 0;
-    padding: 0;
-  }
-
-  .tarefa {
-    position: absolute;
-    bottom: 6px;
-    right: 8px;
-    font-weight: bold;
-    font-size: 0.8rem;
-    color: #666;
-  }
-
-  .evento {
-    margin-top: 4px;
-    font-size: 0.75rem;
-    background-color: #e6f0ff;
-    padding: 2px 4px;
-    border-radius: 4px;
-  }
-</style>
-
-
 
 
 
@@ -622,6 +614,14 @@
     </div>
   </div>
 </footer>
+
+<!-- ICON ALERTA  -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="icon-info" viewBox="0 0 16 16">
+    <path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm.93-8.588-1 4.3c-.07.3.03.5.3.5.2 0 .5-.07.7-.24l-.09.4c-.29.34-.92.6-1.46.6-.7 0-1-.4-.8-1.3l.74-3.17c.06-.3 0-.4-.29-.47l-.45-.08.08-.38 2.3-.3zM8 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+  </symbol>
+</svg>
+
 
 </body>
 </html>
