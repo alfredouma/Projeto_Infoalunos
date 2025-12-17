@@ -1,0 +1,476 @@
+
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InfoAlunos - Home</title>
+  <style>
+    :root {
+      --cor-primaria: #3399ff;
+      --cor-secundaria: white;
+      --cor-terciaria: #003d7a;
+      --cor-cinzento: #6c757d;
+      --cor-verde: #198754;
+      --cor-vermelho: #dc3545;
+      --cor-laranja: #ffa500;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', 'Roboto', 'Open Sans', sans-serif;
+      background-color: var(--cor-secundaria);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      color: #333;
+    }
+
+    .header {
+      background: linear-gradient(90deg, var(--cor-terciaria), var(--cor-primaria));
+      color: var(--cor-secundaria);
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo-header {
+      width: 90px;
+      height: auto;
+      filter: brightness(0) invert(1);
+    }
+
+    .header-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .language-selector {
+      background-color: transparent;
+      color: var(--cor-secundaria);
+      border: 1px solid var(--cor-secundaria);
+      border-radius: 4px;
+      padding: 0.25rem 0.5rem;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .user-profile {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: var(--cor-secundaria);
+      border: 2px solid var(--cor-secundaria);
+    }
+
+    .container {
+      display: flex;
+      flex: 1;
+    }
+
+
+
+
+    
+    /* NAVBAR LATERAL */
+    .menu-lateral {
+      width: 240px;
+      background-color: var(--cor-cinzento);
+      color: var(--cor-secundaria);
+      border-right: 1px solid #ddd;
+      padding-top: 20px;
+    }
+
+    .menu-lateral ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .menu-lateral li {
+      position: relative;
+    }
+
+    .menu-lateral > ul > li {
+      padding: 10px 16px;
+      font-size: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .menu-lateral > ul > li:hover {
+      background-color: var(--cor-laranja);
+      color: white;
+    }
+
+    .menu-lateral li ul {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      background-color: var(--cor-secundaria);
+      min-width: 220px;
+      border-left: 1px solid #ddd;
+      box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+      z-index: 10;
+    }
+
+    .menu-lateral li:hover ul {
+      display: block;
+    }
+
+    .menu-lateral li ul li {
+      padding: 10px 15px;
+      font-size: 14px;
+      color: var(--cor-terciaria);
+      white-space: nowrap;
+      transition: background-color 0.2s;
+    }
+
+    .menu-lateral li ul li:hover {
+      background-color: var(--cor-primaria);
+      color: var(--cor-secundaria);
+    }
+
+    .arrow {
+      font-size: 12px;
+    }
+
+    .content {
+      flex: 1;
+      padding: 1.5rem;
+      overflow-y: auto;
+      background-color: var(--cor-secundaria);
+    }
+
+    .top-links {
+      display: flex;
+      justify-content: flex-end;
+      gap: 2rem;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .top-links a {
+      color: var(--cor-terciaria);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .top-links a:hover {
+      color: var(--cor-primaria);
+      text-decoration: underline;
+    }
+
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .card {
+      background-color: var(--cor-secundaria);
+      border: 1px solid #ddd;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+    @media (max-width: 360px) {
+      .main-grid {
+        grid-template-columns: 1fr;
+      }
+      .menu-lateral {
+        display: none;
+      }
+      .header-left .header-title {
+        display: none;
+      }
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: bold;
+      margin-bottom: 0.75rem;
+      color: var(--cor-terciaria);
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .card-content {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .warning-icon {
+      color: var(--cor-laranja);
+      font-size: 1.1rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+    }
+
+    th {
+      background-color: var(--cor-cinzento);
+      padding: 0.6rem;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    td {
+      padding: 0.6rem;
+      border-bottom: 1px solid #e8e8e8;
+    }
+
+    tbody tr:hover {
+      background-color: #f9f9f9;
+    }
+
+    .bottom-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--cor-primaria);
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: var(--cor-terciaria);
+    }
+
+/* FOOTER UNIVERSIDADE DA MADEIRA */
+
+.footer-uma {
+  background-color: var(--cor-cinzento);
+  color: var(--cor-secundaria);
+  padding: 1.5rem 1rem;
+  font-size: 0.85rem;
+  text-align: center;
+  border-top: 1px solid #ccc;
+}
+
+.footer-uma a {
+  color: var(--cor-secundaria);
+  text-decoration: underline;
+}
+
+.footer-uma a:hover {
+  color: var(--cor-laranja);
+}
+
+.footer-logos {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.footer-logos img {
+  height: 32px;
+  max-width: 100px;
+  object-fit: contain;
+}
+
+/* Responsivo */
+@media (max-width: 480px) {
+  .footer-uma {
+    font-size: 0.75rem;
+    padding: 1rem 0.5rem;
+  }
+
+  .footer-logos {
+    gap: 1rem;
+  }
+
+  .footer-logos img {
+    height: 28px;
+  }
+}
+
+
+
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <img src="/assets/img/logo_uma.png" alt="Logo" class="logo-header">
+      <div class="header-title">InfoAlunos - Serviço de Informação dos Alunos - v3.1.4</div>
+    </div>
+    <div class="header-right">
+      <select class="language-selector">
+        <option value="pt">PT | EN</option>
+      </select>
+      <img src="/assets/img/user.png" alt="User" class="user-profile">
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <div class="container">
+   <!-- NAVBAR LATERAL -->
+<nav class="menu-lateral">
+  <ul>
+
+    <li><a href="/paginas/Geral/home.html">Início</a> <span class="arrow"></span></li>
+
+    <li>Geral <span class="arrow">▶</span>
+      <ul>
+        <li><a href="/paginas/Geral/processos.html">Processos</a></li>
+        <li><a href="/paginas/Geral/dadospessoais.html">Dados Pessoais</a></li>
+        <li><a href="/paginas/Geral/privacidade.html">Privacidade</a></li>
+        <li><a href="/paginas/Geral/ajuda.html">Ajuda</a></li>
+      </ul>
+    </li>
+
+    <li>Serviços <span class="arrow">▶</span>
+      <ul>
+        <li><a href="/paginas/Serviços/pagamento.html">Pagamentos</a></li>
+        <li><a href="/paginas/Serviços/matriculas.html">Matrículas/Inscrições</a></li>
+        <li><a href="/paginas/Serviços/turmas.html">Inscrição em Turmas</a></li>
+        <li><a href="/paginas/Serviços/requerimentos.html">Requerimentos</a></li>
+        <li><a href="https://www.uma.pt/sobre/servico-apoio-estudantes/accao-social/?IDM=PT&ID0=1765922974&ID1=&ID2=305&ID3=4dcc8e465435eb53111106faaff45234">SASUMa–Bolsas</a></li>
+      </ul>
+    </li>
+
+    <li>Concursos <span class="arrow">▶</span>
+      <ul>
+        <li><a href="/paginas/Concursos/candidaturas.html">Candidaturas</a></li>
+      </ul>
+    </li>
+
+    <li>Avaliação <span class="arrow">▶</span>
+      <ul>
+        <li><a href="/paginas/Avaliacao/pautas.html">Pautas</a></li>
+        <li><a href="/paginas/Avaliacao/notas.html">Reclamação de Nota</a></li>
+        <li><a href="/paginas/Avaliacao/inqueritos.html">Inquéritos</a></li>
+        <li><a href="/paginas/Avaliacao/resultado_inquerito.html">Resultados de Inquéritos</a></li>
+        <li><a href="/paginas/Avaliacao/inquerito_raides.html">Inquérito RAIDES</a></li>
+      </ul>
+    </li>
+
+    <li>Creditações <span class="arrow">▶</span>
+      <ul>
+        <li><a href="/paginas/Creditacoes/lista_processos.html">Lista de Processos</a></li>
+        <li><a href="/paginas/Creditacoes/novo_processo.html">Novo Processo</a></li>
+      </ul>
+    </li>
+
+    <li>Documentos <span class="arrow">▶</span>
+      <ul>
+        <li><a href="/paginas/Documentos/academicos.html">Académicos</a></li>
+        <li><a href="/paginas/Documentos/declaracoes.html">Declarações</a></li>
+      </ul>
+    </li>
+
+    <li>Aula <span class="arrow">▶</span>
+      <ul>
+        <li><a href="/paginas/Aula/calendario.html">Calendários</a></li>
+        <li><a href="/paginas/Aula/sumarios.html">Sumário</a></li>
+        <li><a href="/paginas/Aula/marcar_presenca.html">Marcar Presenças</a></li>
+      </ul>
+    </li>
+
+    <li>Disciplina <span class="arrow">▶</span>
+      <ul>
+        <li><a href="/paginas/Disciplina/ficha.html">Fichas</a></li>
+        <li><a href="/paginas/Disciplina/ficheiros.html">Ficheiros</a></li>
+      </ul>
+    </li>
+
+    <li>Curso <span class="arrow">▶</span>
+      <ul>
+        <li><a href="/paginas/Curso/ficha_curricular.html">Ficha Curricular</a></li>
+        <li><a href="/paginas/Curso/horarios.html">Horários</a></li>
+        <li><a href="/paginas/Curso/historico_matriculas.html">Histórico de Matrículas/Inscrições</a></li>
+        <li><a href="/paginas/Curso/historico_disciplinas_aprovadas.html">Histórico de Disciplinas Aprovadas</a></li>
+        <li><a href="/paginas/Curso/transicao_bolonha.html">Transição para Bolonha</a></li>
+        <li><a href="/paginas/Curso/plano_conclusao.html">Plano de Conclusão</a></li>
+        <li><a href="/paginas/Curso/quadro_prescricao.html">Quadro de Prescrição</a></li>
+        <li><a href="/paginas/Curso/atividades_academicas.html">Atividades Académicas do Aluno</a></li>
+      </ul>
+    </li>
+
+    <li>Instituição <span class="arrow">▶</span>
+      <ul>
+        <li><a href="/paginas/Instituicao/estrutura_organica.html">Estrutura Orgânica</a></li>
+      </ul>
+    </li>
+
+    <li><a href="/paginas/Eleicoes/eleicoes.html">Eleições</a> <span class="arrow"></span></li>
+
+  </ul>
+</nav>
+
+    <!-- Content -->
+<div class="content">
+  <div class="card">
+    <div class="card-title">
+      <span class="warning-icon">🔒</span>Lista de Eleições
+    </div>
+    <div class="card-content" style="text-align: center; padding: 2rem;">
+      <p style="color: var(--cor-cinzento); font-size: 0.95rem;">
+        Não existem eleições visíveis neste momento.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
+    </div>
+  </div>
+<!-- FOOTER UNIVERSIDADE DA MADEIRA -->
+<footer class="footer-uma">
+  <div class="footer-content">
+    <p>© Universidade da Madeira - Gabinete de Desenvolvimento de Aplicações Informáticas</p>
+    <p><a href="#">Proteção de Dados e Termos de Utilização</a></p>
+    <p>Colégio dos Jesuítas, 9000-081 Funchal | Tel: +351 291 209400 | Fax: +351 291 209410</p>
+    <p>Processado em 0.16 segundos - powered by hydra framework</p>
+    <div class="footer-logos">
+      <img src="/assets/img/madeira.png">
+      <img src="/assets/img/eu.png">
+      <img src="/assets/img/portugal.png">
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
