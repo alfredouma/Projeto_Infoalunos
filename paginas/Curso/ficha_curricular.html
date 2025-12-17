@@ -345,7 +345,7 @@
 
   <!-- Main Container -->
   <div class="container">
-<!-- NAVBAR LATERAL -->
+   <!-- NAVBAR LATERAL -->
 <nav class="menu-lateral">
   <ul>
 
@@ -439,68 +439,91 @@
   </ul>
 </nav>
 
-<!-- Content -->
+   <!-- Content -->
 <div class="content">
   <div class="card">
-    <div class="card-title">
-      <span class="warning-icon">👤</span>Dados Pessoais do Aluno
-    </div>
-    <div class="card-content">
-      <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start; margin-bottom: 2rem;">
-        <img src="/assets/img/user.png" alt="Foto do Aluno" style="width: 120px; border-radius: 8px; border: 1px solid #ccc;">
 
-        <div style="flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; min-width: 280px;">
-          <!-- Tabela 1: Biografia -->
-          <table style="width: 100%;">
-            <thead>
-              <tr><th colspan="2">Nome e Informação Biográfica</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>Nome Completo</td><td>João Miguel Fernandes Silva</td></tr>
-              <tr><td>Nome Abreviado</td><td>João Miguel</td></tr>
-              <tr><td>Nomes Próprios</td><td>João Miguel</td></tr>
-              <tr><td>Apelidos</td><td>Fernandes Silva</td></tr>
-              <tr><td>Data de Nascimento</td><td>2006-05-12</td></tr>
-              <tr><td>Sexo</td><td>Masculino</td></tr>
-              <tr><td>Estado Civil</td><td>Solteiro</td></tr>
-              <tr><td>Naturalidade</td><td>Lisboa</td></tr>
-              <tr><td>Nacionalidade</td><td>Portugal</td></tr>
-              <tr><td>Pai</td><td>Carlos Manuel Silva</td></tr>
-              <tr><td>Mãe</td><td>Ana Paula Fernandes</td></tr>
-              <tr><td>Aluno Nº</td><td>2145789</td></tr>
-            </tbody>
-          </table>
+    <!-- Histórico de Inscrições -->
+    <div class="card-title">Histórico de Inscrições do Aluno</div>
+    <table style="width: 100%; border-collapse: collapse; margin-bottom: 2rem; font-size: 0.9rem;">
+      <thead style="background-color: #d0e0ff;">
+        <tr>
+          <th style="padding: 0.5rem;">Ano Lectivo</th>
+          <th>Curso</th>
+          <th>Tipo</th>
+          <th>Especialidade</th>
+          <th>Ano</th>
+          <th>Ingresso</th>
+          <th>Estatuto</th>
+          <th>Est</th>
+          <th>Des</th>
+          <th>Conc</th>
+          <th>Inscrição</th>
+          <th>Conclusão</th>
+          <th>Diploma</th>
+          <th>Dipl. Entregue</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2025/26</td>
+          <td>11024.10.0 - 2020/21 Tec Progr Sistema Inf</td>
+          <td>Curso Técnico Superior Profissional</td>
+          <td>S/Ramos - Esp.</td>
+          <td>1</td>
+          <td>Titulares de curso de ensino secundário ou de habilitação legalmente equivalente (para acesso ao curso técnico superior profissional)</td>
+          <td>N</td>
+          <td>A</td>
+          <td>N</td>
+          <td>N</td>
+          <td>18-09-2025</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
 
-          <!-- Tabela 2: Documentos -->
-          <table style="width: 100%;">
-            <thead>
-              <tr><th colspan="2">Documentos de Identificação</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>NIF</td><td>245781963 (Portugal)</td></tr>
-              <tr><td>NIC</td><td>11223344 ABX9 (Portugal)</td></tr>
-              <tr><td>Validade</td><td>2029-11-30</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+    <!-- Unidades Curriculares -->
+    <div class="card-title">Unidades Curriculares Inscrito/Aprovadas</div>
 
-      <!-- Tabela 3: Contactos e Morada -->
-      <table style="width: 100%;">
-        <thead>
-          <tr><th colspan="2">Contactos e Morada</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Telemóvel</td><td>912345678</td></tr>
-          <tr><td>Email Pessoal</td><td>joaomiguel.silva@gmail.com</td></tr>
-          <tr><td>Email Institucional</td><td>2145789@student.uma.pt</td></tr>
-          <tr><td>Morada</td><td>Rua das Flores nº45, 1000-200 Lisboa, Portugal</td></tr>
-        </tbody>
-      </table>
-    </div>
+    <p style="font-weight: bold; margin-bottom: 1rem; font-size: 0.95rem;">
+      Ano Lectivo: 2025/26 &nbsp; - &nbsp; Curso: Tecnologias e Programação de Sistemas de Informação &nbsp; Diploma de Técnico Superior Profissional (Curso Técnico Superior Profissional) &nbsp; 11024.10.0 &nbsp; - &nbsp; Plano 2020/21 &nbsp; - &nbsp; Ramo: Sem Ramos - Especialidades
+    </p>
+
+    <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem;">
+      <thead style="background-color: #d0e0ff;">
+        <tr>
+          <th style="padding: 0.5rem;">Disciplina</th>
+          <th>Ano</th>
+          <th>Período</th>
+          <th>ECTS/UC</th>
+          <th>AC</th>
+          <th>Nível</th>
+          <th>Op Comp</th>
+          <th>Nota</th>
+          <th>Aprov.</th>
+          <th>Melhoria</th>
+          <th>Dt Melh.</th>
+          <th>Avaliação</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>206142 Design Hipermédia</td><td>1</td><td>S1</td><td>6.50</td><td>CIN</td><td>T</td><td>N</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>206143 Introdução à Programação</td><td>1</td><td>S1</td><td>6.50</td><td>CIN</td><td>T</td><td>N</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>206134 Matemática</td><td>1</td><td>S1</td><td>6.50</td><td>MAT</td><td>T</td><td>N</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>206137 Sistemas Operativos e Redes</td><td>1</td><td>S1</td><td>6.50</td><td>CIN</td><td>T</td><td>N</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>206135 Técnicas de Expressão do Português</td><td>1</td><td>S1</td><td>6.50</td><td>LUM</td><td>T</td><td>N</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>206138 Desenvolvimento Web - Back-End</td><td>1</td><td>S2</td><td>6.50</td><td>CIN</td><td>T</td><td>N</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>206139 Desenvolvimento Web - Front-End</td><td>1</td><td>S2</td><td>6.50</td><td>CIN</td><td>T</td><td>N</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>206132 Inglês Técnico</td><td>1</td><td>S2</td><td>6.50</td><td>LLE</td><td>T</td><td>N</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>206136 Programação Orientada por Objetos</td><td>1</td><td>S2</td><td>6.50</td><td>CIN</td><td>T</td><td>N</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>206285 Sistemas Gestores de Bases de Dados I</td><td>1</td><td>S2</td><td>6.50</td><td>B</td><td>T</td><td>N</td><td></td><td></td><td></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+
   </div>
 </div>
-
 
 
 

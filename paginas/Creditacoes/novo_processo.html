@@ -345,7 +345,7 @@
 
   <!-- Main Container -->
   <div class="container">
-<!-- NAVBAR LATERAL -->
+  <!-- NAVBAR LATERAL -->
 <nav class="menu-lateral">
   <ul>
 
@@ -439,69 +439,179 @@
   </ul>
 </nav>
 
-<!-- Content -->
-<div class="content">
+    <!-- Content -->
+<div class="content" style="max-width: 1000px; margin: 0 auto;">
   <div class="card">
-    <div class="card-title">
-      <span class="warning-icon">👤</span>Dados Pessoais do Aluno
+
+    <!-- Título -->
+    <div class="card-title" style="font-size: 1.3rem; font-weight: bold; text-align: center; margin-bottom: 1rem;">
+      Creditação de Formação
     </div>
-    <div class="card-content">
-      <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start; margin-bottom: 2rem;">
-        <img src="/assets/img/user.png" alt="Foto do Aluno" style="width: 120px; border-radius: 8px; border: 1px solid #ccc;">
 
-        <div style="flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; min-width: 280px;">
-          <!-- Tabela 1: Biografia -->
-          <table style="width: 100%;">
-            <thead>
-              <tr><th colspan="2">Nome e Informação Biográfica</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>Nome Completo</td><td>João Miguel Fernandes Silva</td></tr>
-              <tr><td>Nome Abreviado</td><td>João Miguel</td></tr>
-              <tr><td>Nomes Próprios</td><td>João Miguel</td></tr>
-              <tr><td>Apelidos</td><td>Fernandes Silva</td></tr>
-              <tr><td>Data de Nascimento</td><td>2006-05-12</td></tr>
-              <tr><td>Sexo</td><td>Masculino</td></tr>
-              <tr><td>Estado Civil</td><td>Solteiro</td></tr>
-              <tr><td>Naturalidade</td><td>Lisboa</td></tr>
-              <tr><td>Nacionalidade</td><td>Portugal</td></tr>
-              <tr><td>Pai</td><td>Carlos Manuel Silva</td></tr>
-              <tr><td>Mãe</td><td>Ana Paula Fernandes</td></tr>
-              <tr><td>Aluno Nº</td><td>2145789</td></tr>
-            </tbody>
-          </table>
+   <!-- Accordion: Novo/Alterar -->
+    <details open style="margin-bottom: 2rem;">
+      <summary style="font-weight: bold; font-size: 1rem; cursor: pointer; padding: 0.5rem 0;">Novo/Alterar</summary>
+      <div style="padding: 1rem; border-top: 1px solid var(--cor-cinzento);">
 
-          <!-- Tabela 2: Documentos -->
-          <table style="width: 100%;">
-            <thead>
-              <tr><th colspan="2">Documentos de Identificação</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>NIF</td><td>245781963 (Portugal)</td></tr>
-              <tr><td>NIC</td><td>11223344 ABX9 (Portugal)</td></tr>
-              <tr><td>Validade</td><td>2029-11-30</td></tr>
-            </tbody>
-          </table>
+        <!-- Links -->
+        <div style="background-color: #fff8dc; padding: 1rem; border-radius: 4px; margin-bottom: 2rem; font-size: 0.9rem;">
+          [ <a href="#">Preçário</a> ] &nbsp;
+          [ <a href="#">Ajuda e Descrição do Processo</a> ] &nbsp;
+          [ <a href="#">Voltar à Lista</a> ]
         </div>
-      </div>
 
-      <!-- Tabela 3: Contactos e Morada -->
-      <table style="width: 100%;">
-        <thead>
-          <tr><th colspan="2">Contactos e Morada</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Telemóvel</td><td>912345678</td></tr>
-          <tr><td>Email Pessoal</td><td>joaomiguel.silva@gmail.com</td></tr>
-          <tr><td>Email Institucional</td><td>2145789@student.uma.pt</td></tr>
-          <tr><td>Morada</td><td>Rua das Flores nº45, 1000-200 Lisboa, Portugal</td></tr>
-        </tbody>
-      </table>
-    </div>
+        <!-- Campos principais -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+          <div>
+            <label>Ano Letivo (para escolha do Curso): <span style="color: red;">*</span></label><br>
+            <select style="width: 100%; padding: 0.4rem;">
+              <option>2025/26</option>
+            </select><br><br>
+
+            <label>Curso (a creditar): <span style="color: red;">*</span></label><br>
+            <select style="width: 100%; padding: 0.4rem;">
+              <option>CTeSP - Tecnologias e Programação de Sistemas de Informação</option>
+            </select><br><br>
+
+            <label>Alterar Estado/Pedido:</label><br>
+            <input type="text" style="width: 100%; padding: 0.4rem;">
+          </div>
+
+          <div>
+            <label>Justificação Actual:</label><br>
+            <textarea style="width: 100%; height: 60px; padding: 0.4rem;"></textarea><br><br>
+
+            <label>Justificação para alterar estado:</label><br>
+            <textarea style="width: 100%; height: 60px; padding: 0.4rem;"></textarea>
+          </div>
+        </div>
+
+        <!-- Formação Académica Original -->
+        <div style="font-weight: bold; margin-bottom: 0.5rem;">Formação Académica Original</div>
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-bottom: 1rem;">
+          <thead>
+            <tr style="background-color: var(--cor-cinzento); color: white;">
+              <th>Inst.</th><th>UCurr.</th><th>Área</th><th>Curso</th><th>Prog.</th><th>Nível</th><th>Class.</th><th>Out.</th><th>Unid.</th><th>Ano Letivo</th>
+              <th colspan="5">A Creditar (a preencher pelo Dir. Curso)</th>
+            </tr>
+            <tr>
+              <th colspan="10"></th>
+              <th>Área</th><th>Nível</th><th>Class.</th><th>ECTS</th><th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td colspan="15" style="text-align: center; padding: 1rem;">⚠ Sem resultados</td></tr>
+          </tbody>
+        </table>
+
+        <div style="font-size: 0.85rem; color: #a00; margin-bottom: 2rem;">
+          "E": Formação Externa. Quando tem esta indicação a formação não é da Universidade da Madeira e deve ser verificada.
+        </div>
+
+        <!-- Formação Não Académica -->
+        <div style="font-weight: bold; margin-bottom: 0.5rem;">Formação Não Académica</div>
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-bottom: 2rem;">
+          <thead>
+            <tr style="background-color: var(--cor-cinzento); color: white;">
+              <th>Descrição</th><th>Prog.</th><th>Ano Letivo</th><th>Área</th><th>Nível</th><th>ECTS</th><th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td colspan="7" style="text-align: center; padding: 1rem;">⚠ Sem resultados</td></tr>
+          </tbody>
+        </table>
+
+        <!-- Módulos/Trabalhos -->
+        <div style="font-weight: bold; margin-bottom: 0.5rem;">Módulos/Trabalhos - RESERVADO AOS SERVIÇOS</div>
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-bottom: 2rem;">
+          <thead>
+            <tr style="background-color: var(--cor-cinzento); color: white;">
+              <th>Descrição</th><th>Prog.</th><th>Ano Letivo</th><th>Área</th><th>Nível</th><th>Class.</th><th>ECTS</th><th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td colspan="8" style="text-align: center; padding: 1rem;">⚠ Sem resultados</td></tr>
+          </tbody>
+        </table>
+
+        <!-- Uploads -->
+        <div style="margin-bottom: 2rem;">
+          <label>Anexar Documento 1:</label><br>
+          <input type="file"><br>
+          <span style="font-size: 0.85rem; color: var(--cor-cinzento);">Não foi escolhido nenhum ficheiro</span><br><br>
+
+          <label>Anexar Documento 2:</label><br>
+          <input type="file"><br>
+          <span style="font-size: 0.85rem; color: var(--cor-cinzento);">Não foi escolhido nenhum ficheiro</span><br><br>
+
+          <label>Anexar Documento 3:</label><br>
+          <input type="file"><br>
+          <span style="font-size: 0.85rem; color: var(--cor-cinzento);">Não foi escolhido nenhum ficheiro</span>
+        </div>
+
+        <!-- Nota obrigatória -->
+        <div style="font-size: 0.85rem; color: #a00; margin-bottom: 2rem;">
+          Os campos assinalados com * são de preenchimento obrigatório.
+        </div>
+
+        <!-- Botão -->
+        <div style="text-align: right;">
+          <button style="padding: 0.6rem 1.2rem; background-color: var(--cor-primaria); color: white; border: none; border-radius: 4px;">
+            Guardar Processo
+          </button>
+        </div>
+
+      </div>
+    </details>
+
+
+    <!-- Accordion: Plano de Formação -->
+    <details>
+      <summary style="font-weight: bold; font-size: 1rem; cursor: pointer; padding: 0.5rem 0;">Plano de Formação</summary>
+      <div style="padding: 1rem; border-top: 1px solid var(--cor-cinzento);">
+
+        <div style="background-color: #fff8dc; padding: 1rem; border-radius: 4px; margin-bottom: 1rem; font-size: 0.9rem;">
+          [ <a href="#">Preçário</a> ] &nbsp;
+          [ <a href="#">Ajuda e Descrição do Processo</a> ] &nbsp;
+          [ <a href="#">Voltar à Lista</a> ]
+        </div>
+
+        <div style="font-size: 0.9rem; color: var(--cor-cinzento); padding: 1rem; border: 1px solid var(--cor-cinzento); border-radius: 4px;">
+          <svg style="width: 16px; height: 16px; vertical-align: middle;"><use href="#icon-info"></use></svg>
+          Sem resultados. Selecione um processo de creditação.
+        </div>
+
+      </div>
+    </details>
+
+    <!-- Accordion: Documentos e Histórico -->
+    <details>
+      <summary style="font-weight: bold; font-size: 1rem; cursor: pointer; padding: 0.5rem 0;">Documentos e Histórico</summary>
+      <div style="padding: 1rem; border-top: 1px solid var(--cor-cinzento);">
+
+        <div style="background-color: #fff8dc; padding: 1rem; border-radius: 4px; margin-bottom: 1rem; font-size: 0.9rem;">
+          [ <a href="#">Preçário</a> ] &nbsp;
+          ? [ <a href="#">Ajuda e Descrição do Processo</a> ] &nbsp;
+          [ <a href="#">Voltar à Lista</a> ]
+        </div>
+
+        <div style="font-weight: bold; margin-bottom: 0.5rem;">Histórico dos Estados do Processo</div>
+        <div style="font-size: 0.9rem; color: var(--cor-cinzento); margin-bottom: 1rem;">⚠ Sem resultados</div>
+
+                <div style="font-weight: bold; margin-bottom: 0.5rem;">Emolumentos do Processo</div>
+        <div style="font-size: 0.9rem; color: var(--cor-cinzento); margin-bottom: 1rem;">⚠ Sem resultados</div>
+
+        <div style="font-weight: bold; margin-bottom: 0.5rem;">Documentos Associados ao Processo</div>
+        <div style="font-size: 0.9rem; color: var(--cor-cinzento); margin-bottom: 2rem;">
+          <svg style="width: 16px; height: 16px; vertical-align: middle;"><use href="#icon-info"></use></svg>
+          Não foram encontrados ficheiros ou não seleccionou um processo.
+        </div>
+
+      </div>
+    </details>
+
   </div>
 </div>
-
-
 
 
 

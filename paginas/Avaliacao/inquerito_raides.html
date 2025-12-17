@@ -345,7 +345,7 @@
 
   <!-- Main Container -->
   <div class="container">
-<!-- NAVBAR LATERAL -->
+   <!-- NAVBAR LATERAL -->
 <nav class="menu-lateral">
   <ul>
 
@@ -440,68 +440,220 @@
 </nav>
 
 <!-- Content -->
-<div class="content">
+<div class="content" style="max-width: 1000px; margin: 0 auto;">
   <div class="card">
-    <div class="card-title">
-      <span class="warning-icon">👤</span>Dados Pessoais do Aluno
+
+    <!-- Título e descrição fora da tabela -->
+    <div class="card-title" style="font-size: 1.2rem; font-weight: bold; margin-bottom: 0.5rem;">
+      Avaliação / Inquérito RAIDES
     </div>
-    <div class="card-content">
-      <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start; margin-bottom: 2rem;">
-        <img src="/assets/img/user.png" alt="Foto do Aluno" style="width: 120px; border-radius: 8px; border: 1px solid #ccc;">
-
-        <div style="flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; min-width: 280px;">
-          <!-- Tabela 1: Biografia -->
-          <table style="width: 100%;">
-            <thead>
-              <tr><th colspan="2">Nome e Informação Biográfica</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>Nome Completo</td><td>João Miguel Fernandes Silva</td></tr>
-              <tr><td>Nome Abreviado</td><td>João Miguel</td></tr>
-              <tr><td>Nomes Próprios</td><td>João Miguel</td></tr>
-              <tr><td>Apelidos</td><td>Fernandes Silva</td></tr>
-              <tr><td>Data de Nascimento</td><td>2006-05-12</td></tr>
-              <tr><td>Sexo</td><td>Masculino</td></tr>
-              <tr><td>Estado Civil</td><td>Solteiro</td></tr>
-              <tr><td>Naturalidade</td><td>Lisboa</td></tr>
-              <tr><td>Nacionalidade</td><td>Portugal</td></tr>
-              <tr><td>Pai</td><td>Carlos Manuel Silva</td></tr>
-              <tr><td>Mãe</td><td>Ana Paula Fernandes</td></tr>
-              <tr><td>Aluno Nº</td><td>2145789</td></tr>
-            </tbody>
-          </table>
-
-          <!-- Tabela 2: Documentos -->
-          <table style="width: 100%;">
-            <thead>
-              <tr><th colspan="2">Documentos de Identificação</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>NIF</td><td>245781963 (Portugal)</td></tr>
-              <tr><td>NIC</td><td>11223344 ABX9 (Portugal)</td></tr>
-              <tr><td>Validade</td><td>2029-11-30</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <!-- Tabela 3: Contactos e Morada -->
-      <table style="width: 100%;">
-        <thead>
-          <tr><th colspan="2">Contactos e Morada</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Telemóvel</td><td>912345678</td></tr>
-          <tr><td>Email Pessoal</td><td>joaomiguel.silva@gmail.com</td></tr>
-          <tr><td>Email Institucional</td><td>2145789@student.uma.pt</td></tr>
-          <tr><td>Morada</td><td>Rua das Flores nº45, 1000-200 Lisboa, Portugal</td></tr>
-        </tbody>
-      </table>
+    <div style="font-size: 0.9rem; margin-bottom: 2rem;">
+      Este Inquérito destina-se à recolha de dados, de acordo com as regras estabelecidas pela Direção-Geral de Estatísticas da Educação e Ciência, sendo de preenchimento obrigatório.
     </div>
+
+    <!-- Tabela superior -->
+    <table style="width: 100%; border-collapse: collapse; margin-bottom: 2rem;">
+      <tr>
+        <td style="padding: 0.5rem; font-weight: bold;">Curso</td>
+        <td style="padding: 0.5rem;">
+          <select style="width: 100%; padding: 0.4rem;">
+            <option>2025/26 - CTeSP - Tecnologias e Programação de Sistemas de Informação</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+
+    <!-- Tabela inferior -->
+    <table style="width: 100%; border-collapse: collapse;">
+      <!-- Secção 1 -->
+      <tr>
+        <td colspan="2" style="padding: 0.5rem; font-weight: bold;">1 Informações sobre o Ingresso</td>
+      </tr>
+      <tr>
+        <td style="padding: 0.5rem;">Ano Letivo de Ingresso</td>
+        <td style="padding: 0.5rem;">
+          <select style="width: 100%; padding: 0.4rem;">
+            <option>2025/26</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 0.5rem;">Forma de Ingresso</td>
+        <td style="padding: 0.5rem;">
+          <select style="width: 100%; padding: 0.4rem;">
+            <option>Titulares de curso de ensino secundário ou de habilitação legalmente equivalente</option>
+          </select>
+        </td>
+      </tr>
+
+      <!-- Secção 2 -->
+      <tr>
+        <td colspan="2" style="padding: 0.5rem; font-weight: bold;">2 Informações relativas à escolaridade completa mais elevada</td>
+      </tr>
+      <tr>
+        <td colspan="2" style="padding: 0.5rem;">
+          <div style="border: 1px solid #ccc; border-radius: 4px; padding: 0.75rem;">
+            <p style="margin-bottom: 0.5rem;">Caso a sua escolaridade mais elevada corresponda a algumas das opções abaixo apresentadas deverá selecioná-la.</p>
+            <label style="display: block; margin-bottom: 0.5rem;">
+              <input type="radio" name="escolaridade" checked>
+              2025 - Ensino Secundário ou Equivalente (12º Ano Escolaridade) - Portugal
+            </label>
+            <label style="display: block;">
+              <input type="radio" name="escolaridade">
+              Caso a opção que procura não se encontre na lista acima, deve selecionar esta opção e inserir a informação na secção seguinte
+            </label>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 0.5rem;">Qual o nível de escolaridade mais elevado que possui?</td>
+        <td style="padding: 0.5rem;">
+          <select style="width: 100%; padding: 0.4rem;">
+            <option>Ensino secundário (12.º ano de escolaridade completo) ou equivalente</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 0.5rem;">Em que país completou essa escolaridade?</td>
+        <td style="padding: 0.5rem;">
+          <select style="width: 100%; padding: 0.4rem;">
+            <option>Portugal</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 0.5rem;">Em que ano civil concluiu esse nível de escolaridade?</td>
+        <td style="padding: 0.5rem;">
+          <select style="width: 100%; padding: 0.4rem;">
+            <option>2025</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 0.5rem;">Qual o tipo de estabelecimento (público ou privado) frequentado no secundário?</td>
+        <td style="padding: 0.5rem;">
+          <select style="width: 100%; padding: 0.4rem;">
+            <option>Público</option>
+            <option>Privado</option>
+          </select>
+        </td>
+      </tr>
+
+      <!-- Secção 3 -->
+      <tr>
+        <td colspan="2" style="padding: 0.5rem; font-weight: bold;">3 Informações relativas aos pais do aluno</td>
+      </tr>
+      <tr>
+        <td style="padding: 0.5rem;">Qual a habilitação académica do seu pai?</td>
+        <td style="padding: 0.5rem;">
+          <select style="width: 100%; padding: 0.4rem;">
+            <option>Doutoramento</option>
+            <option>Licenciatura</option>
+            <option>Mestrado</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 0.5rem;">Qual a habilitação académica da sua mãe?</td>
+        <td style="padding: 0.5rem;">
+          <select style="width: 100%; padding: 0.4rem;">
+            <option>Ensino Secundário ou Equivalente</option>
+            <option>Licenciatura</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 0.5rem;">Qual a situação profissional do seu pai?</td>
+        <td style="padding: 0.5rem;">
+          <select style="width: 100%; padding: 0.4rem;">
+            <option>Trabalhador por Conta de Outrem</option>
+            <option>Desempregado</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 0.5rem;">Qual a situação profissional da sua mãe?</td>
+        <td style="padding: 0.5rem;">
+          <select style="width: 100%; padding: 0.4rem;">
+            <option>Não disponível</option>
+            <option>Trabalhadora por Conta de Outrem</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 0.5rem;">Qual a profissão do seu pai?</td>
+        <td style="padding: 0.5rem;">
+          <select style="width: 100%; padding: 0.4rem;">
+            <option>Profissionais de saúde</option>
+            <option>Professor</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 0.5rem;">Qual a profissão da sua mãe?</td>
+        <td style="padding: 0.5rem;">
+          <select style="width: 100%; padding: 0.4rem;">
+            <option>Vendedores</option>
+            <option>Administrativa</option>
+          </select>
+        </td>
+      </tr>
+
+            <!-- Secção 4 -->
+      <tr>
+        <td colspan="2" style="padding: 0.5rem; font-weight: bold;">4 Informações relativas ao aluno</td>
+      </tr>
+      <tr>
+        <td style="padding: 0.5rem;">Qual a sua situação profissional?</td>
+        <td style="padding: 0.5rem;">
+          <select style="width: 100%; padding: 0.4rem;">
+            <option>Estudante</option>
+            <option>Trabalhador por Conta de Outrem</option>
+            <option>Desempregado</option>
+            <option>Reformado</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 0.5rem;">Qual a sua profissão atual (ou anterior, em caso de reforma ou desemprego)</td>
+        <td style="padding: 0.5rem;">
+          <select style="width: 100%; padding: 0.4rem;">
+            <option>Não Sabe / Não se Aplica</option>
+            <option>Professor</option>
+            <option>Profissional de saúde</option>
+            <option>Vendedor</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 0.5rem;">Em que país concluiu o ensino secundário?</td>
+        <td style="padding: 0.5rem;">
+          <select style="width: 100%; padding: 0.4rem;">
+            <option>Portugal</option>
+            <option>Outro País</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 0.5rem;">Está deslocado da sua residência familiar?</td>
+        <td style="padding: 0.5rem;">
+          <select style="width: 100%; padding: 0.4rem;">
+            <option>Não</option>
+            <option>Sim</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+
+    <!-- Botão -->
+    <div style="text-align: right; margin-top: 2rem;">
+      <button style="padding: 0.6rem 1.2rem; background-color: var(--cor-verde); color: white; border: none; border-radius: 4px;">
+        Submeter inquérito
+      </button>
+    </div>
+
   </div>
 </div>
-
-
 
 
 

@@ -326,6 +326,47 @@
 
 
 
+/* ALERTAS */
+
+
+.alerta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+.alerta svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.alerta-azul {
+  background: var(--cor-primaria);
+  color: var(--cor-secundaria);
+}
+
+.alerta-verde {
+  background: var(--cor-verde);
+  color: var(--cor-secundaria);
+}
+
+.alerta-amarelo {
+  background: var(--cor-laranja);
+  color: var(--cor-secundaria);
+}
+
+.alerta-vermelho {
+  background: var(--cor-vermelho);
+  color: var(--cor-secundaria);
+}
+
+
+
   </style>
 </head>
 <body>
@@ -345,7 +386,7 @@
 
   <!-- Main Container -->
   <div class="container">
-<!-- NAVBAR LATERAL -->
+ <!-- NAVBAR LATERAL -->
 <nav class="menu-lateral">
   <ul>
 
@@ -440,66 +481,79 @@
 </nav>
 
 <!-- Content -->
-<div class="content">
-  <div class="card">
-    <div class="card-title">
-      <span class="warning-icon">👤</span>Dados Pessoais do Aluno
+<div class="content" style="max-width: 1000px; margin: 0 auto;">
+
+    <!-- Curso selecionado -->
+    <div style="margin-bottom: 2rem;">
+      <label style="font-weight: bold;">Curso</label><br>
+      <select style="width: 100%; padding: 0.4rem;">
+        <option>2025/26 - CTeSP - Tecnologias e Programação de Sistemas de Informação</option>
+      </select>
     </div>
-    <div class="card-content">
-      <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start; margin-bottom: 2rem;">
-        <img src="/assets/img/user.png" alt="Foto do Aluno" style="width: 120px; border-radius: 8px; border: 1px solid #ccc;">
 
-        <div style="flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; min-width: 280px;">
-          <!-- Tabela 1: Biografia -->
-          <table style="width: 100%;">
-            <thead>
-              <tr><th colspan="2">Nome e Informação Biográfica</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>Nome Completo</td><td>João Miguel Fernandes Silva</td></tr>
-              <tr><td>Nome Abreviado</td><td>João Miguel</td></tr>
-              <tr><td>Nomes Próprios</td><td>João Miguel</td></tr>
-              <tr><td>Apelidos</td><td>Fernandes Silva</td></tr>
-              <tr><td>Data de Nascimento</td><td>2006-05-12</td></tr>
-              <tr><td>Sexo</td><td>Masculino</td></tr>
-              <tr><td>Estado Civil</td><td>Solteiro</td></tr>
-              <tr><td>Naturalidade</td><td>Lisboa</td></tr>
-              <tr><td>Nacionalidade</td><td>Portugal</td></tr>
-              <tr><td>Pai</td><td>Carlos Manuel Silva</td></tr>
-              <tr><td>Mãe</td><td>Ana Paula Fernandes</td></tr>
-              <tr><td>Aluno Nº</td><td>2145789</td></tr>
-            </tbody>
-          </table>
+    <!-- Título centralizado -->
+    <div style="font-size: 1.3rem; font-weight: bold; text-align: center; margin-bottom: 2rem;">
+      Documentos / Declarações Sociais
+    </div>
 
-          <!-- Tabela 2: Documentos -->
-          <table style="width: 100%;">
-            <thead>
-              <tr><th colspan="2">Documentos de Identificação</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>NIF</td><td>245781963 (Portugal)</td></tr>
-              <tr><td>NIC</td><td>11223344 ABX9 (Portugal)</td></tr>
-              <tr><td>Validade</td><td>2029-11-30</td></tr>
-            </tbody>
-          </table>
+    <!-- Texto explicativo -->
+    <div style="font-size: 0.9rem; margin-bottom: 2rem;">
+      A emissão dos documentos relativos a declarações sociais é imediata, sendo gerada pelo sistema de forma automática. Outro tipo de declarações devem ser solicitadas através do menu <strong>Serviços &gt; Requerimentos &gt; Submeter novo/Detalhe</strong>. Poderá também consultar documentos relativos a atos académicos através do menu <strong>Documentos &gt; Académicos</strong>.
+    </div>
+
+    <!-- ALERTA AMARELO -->
+    <div class="alerta alerta-amarelo" style="margin-bottom: 2rem;">
+      <svg><use href="#icon-info"></use></svg>
+      Não é possível emitir a Declaração de aproveitamento para fins sociais. Só é possível emitir a declaração quando não tiver pagamentos em falta no ano letivo 2025/26.
+    </div>
+
+    <!-- Blocos de emissão -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+      <!-- Bloco 1: Aproveitamento -->
+      <div style="display: flex; align-items: center; gap: 1rem; border: 1px solid var(--cor-cinzento); border-radius: 6px; padding: 1rem;">
+        <img src="/assets/img/documento.png" alt="Documento" style="width: 40px; height: 40px;">
+        <div style="flex: 1;">
+          <div style="font-weight: bold;">Declaração de aproveitamento para fins sociais</div>
         </div>
+        <button disabled style="padding: 0.4rem 1rem; background-color: #ccc; color: #666; border: none; border-radius: 4px; cursor: not-allowed;">
+          Emitir
+        </button>
       </div>
 
-      <!-- Tabela 3: Contactos e Morada -->
-      <table style="width: 100%;">
-        <thead>
-          <tr><th colspan="2">Contactos e Morada</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Telemóvel</td><td>912345678</td></tr>
-          <tr><td>Email Pessoal</td><td>joaomiguel.silva@gmail.com</td></tr>
-          <tr><td>Email Institucional</td><td>2145789@student.uma.pt</td></tr>
-          <tr><td>Morada</td><td>Rua das Flores nº45, 1000-200 Lisboa, Portugal</td></tr>
-        </tbody>
-      </table>
+      <!-- Bloco 2: Matrícula -->
+      <div style="display: flex; align-items: center; gap: 1rem; border: 1px solid var(--cor-cinzento); border-radius: 6px; padding: 1rem;">
+        <img src="/assets/img/documento.png" alt="Documento" style="width: 40px; height: 40px;">
+        <div style="flex: 1;">
+          <div style="font-weight: bold;">Declaração de matrícula para fins sociais</div>
+        </div>
+        <button style="padding: 0.4rem 1rem; background-color: var(--cor-primaria); color: white; border: none; border-radius: 4px;">
+          Emitir
+        </button>
+      </div>
     </div>
-  </div>
+
+    <!-- Histórico -->
+    <div style="font-weight: bold; margin-bottom: 0.5rem;">Histórico de Declarações Sociais Emitidas</div>
+    <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 1px solid var(--cor-cinzento); border-radius: 6px; margin-bottom: 2rem;">
+
+      <div style="flex: 1;">
+        <div style="font-weight: bold;">Declaração de matrícula para fins sociais</div>
+        <div style="font-size: 0.9rem;">
+          ano letivo 2025/26, curso de Curso Técnico Superior Profissional em TECNOLOGIAS E PROGRAMAÇÃO DE SISTEMAS DE INFORMAÇÃO
+        </div>
+      </div>
+      <div style="font-size: 0.9rem; white-space: nowrap;">2025-09-27</div>
+    </div>
+
+  
 </div>
+
+<!-- ICON ALERTA -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="icon-info" viewBox="0 0 16 16">
+    <path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm.93-8.588-1 4.3c-.07.3.03.5.3.5.2 0 .5-.07.7-.24l-.09.4c-.29.34-.92.6-1.46.6-.7 0-1-.4-.8-1.3l.74-3.17c.06-.3 0-.4-.29-.47l-.45-.08.08-.38 2.3-.3zM8 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+  </symbol>
+</svg>
 
 
 

@@ -439,68 +439,102 @@
   </ul>
 </nav>
 
-<!-- Content -->
-<div class="content">
+  <!-- Content -->
+<div class="content" style="max-width: 1000px; margin: 0 auto;">
   <div class="card">
-    <div class="card-title">
-      <span class="warning-icon">👤</span>Dados Pessoais do Aluno
+
+    <!-- Accordion: Lista de Requerimentos (imagem 1) -->
+    <details open style="margin-bottom: 2rem;">
+      <summary style="font-weight: bold; font-size: 1rem; cursor: pointer; padding: 0.5rem 0;">Lista de Requerimentos</summary>
+      <div style="padding: 1rem; border-top: 1px solid var(--cor-cinzento);">
+
+        <p style="font-size: 0.9rem; margin-bottom: 1rem;">
+          Para inserir uma nova reclamação clique no tabulador <strong>Submeter Novo/Detalhe</strong>.
+        </p>
+
+         <div style="font-size: 0.9rem; color: var(--cor-cinzento); margin-bottom: 2rem;">
+      ⚠ Sem resultados
     </div>
-    <div class="card-content">
-      <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start; margin-bottom: 2rem;">
-        <img src="/assets/img/user.png" alt="Foto do Aluno" style="width: 120px; border-radius: 8px; border: 1px solid #ccc;">
 
-        <div style="flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; min-width: 280px;">
-          <!-- Tabela 1: Biografia -->
-          <table style="width: 100%;">
-            <thead>
-              <tr><th colspan="2">Nome e Informação Biográfica</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>Nome Completo</td><td>João Miguel Fernandes Silva</td></tr>
-              <tr><td>Nome Abreviado</td><td>João Miguel</td></tr>
-              <tr><td>Nomes Próprios</td><td>João Miguel</td></tr>
-              <tr><td>Apelidos</td><td>Fernandes Silva</td></tr>
-              <tr><td>Data de Nascimento</td><td>2006-05-12</td></tr>
-              <tr><td>Sexo</td><td>Masculino</td></tr>
-              <tr><td>Estado Civil</td><td>Solteiro</td></tr>
-              <tr><td>Naturalidade</td><td>Lisboa</td></tr>
-              <tr><td>Nacionalidade</td><td>Portugal</td></tr>
-              <tr><td>Pai</td><td>Carlos Manuel Silva</td></tr>
-              <tr><td>Mãe</td><td>Ana Paula Fernandes</td></tr>
-              <tr><td>Aluno Nº</td><td>2145789</td></tr>
-            </tbody>
-          </table>
-
-          <!-- Tabela 2: Documentos -->
-          <table style="width: 100%;">
-            <thead>
-              <tr><th colspan="2">Documentos de Identificação</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>NIF</td><td>245781963 (Portugal)</td></tr>
-              <tr><td>NIC</td><td>11223344 ABX9 (Portugal)</td></tr>
-              <tr><td>Validade</td><td>2029-11-30</td></tr>
-            </tbody>
-          </table>
-        </div>
       </div>
+    </details>
 
-      <!-- Tabela 3: Contactos e Morada -->
-      <table style="width: 100%;">
-        <thead>
-          <tr><th colspan="2">Contactos e Morada</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Telemóvel</td><td>912345678</td></tr>
-          <tr><td>Email Pessoal</td><td>joaomiguel.silva@gmail.com</td></tr>
-          <tr><td>Email Institucional</td><td>2145789@student.uma.pt</td></tr>
-          <tr><td>Morada</td><td>Rua das Flores nº45, 1000-200 Lisboa, Portugal</td></tr>
-        </tbody>
-      </table>
+    <!-- Accordion: Submeter Novo/Detalhe (imagem 2) -->
+    <details>
+      <summary style="font-weight: bold; font-size: 1rem; cursor: pointer; padding: 0.5rem 0;">Submeter Novo/Detalhe</summary>
+      <div style="padding: 1rem; border-top: 1px solid var(--cor-cinzento);">
+
+        <!-- Painel de campos -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+
+          <!-- Coluna 1: Despacho -->
+          <div>
+            <label>Data do Despacho:</label><br>
+            <input type="date" style="width: 100%;"><br><br>
+            <label>Despacho:</label><br>
+            <textarea style="width: 100%; height: 60px;"></textarea><br><br>
+            <label>Justificação:</label><br>
+            <textarea style="width: 100%; height: 60px;"></textarea><br><br>
+            <label>Cod. Entrada:</label><br>
+            <input type="text" style="width: 100%;"><br><br>
+            <label>Data Entrada:</label><br>
+            <input type="date" style="width: 100%;"><br><br>
+            <label>Origem:</label><br>
+            <input type="text" style="width: 100%;"><br><br>
+            <label>Data de afixação:</label><br>
+            <input type="date" style="width: 100%;">
+          </div>
+
+          <!-- Coluna 2: Pedido -->
+          <div>
+            <label>Ano Lectivo:</label><br>
+            <input type="text" style="width: 100%;"><br><br>
+            <label>Disciplina:</label><br>
+            <input type="text" style="width: 100%;"><br><br>
+            <label>Pauta:</label><br>
+            <input type="text" style="width: 100%;"><br><br>
+            <label>Assunto:</label><br>
+            <input type="text" style="width: 100%;"><br><br>
+            <label>Nº Aluno:</label><br>
+            <input type="text" value="2133925" style="width: 100%;"><br><br>
+            <label>Entidade:</label><br>
+            <input type="text" value="Alfredo Alejandro Garcia de Gouveia" style="width: 100%;"><br><br>
+            <label>Data do Pedido:</label><br>
+            <input type="date" style="width: 100%;">
+          </div>
+        </div>
+
+        <!-- Botões -->
+        <div style="display: flex; gap: 1rem;">
+          <button style="padding: 0.5rem 1rem;">Limpar Campos (Novo Pedido)</button>
+          <button style="padding: 0.5rem 1rem;">Cancelar Processo</button>
+          <button style="padding: 0.5rem 1rem; background-color: var(--cor-primaria); color: white;">Guardar Processo</button>
+        </div>
+
+        <!-- Rodapé -->
+        <div style="margin-top: 2rem; font-size: 0.9rem;">
+          <strong>Emolumentos do Processo</strong><br><br>
+          <div style="font-size: 0.9rem; color: var(--cor-cinzento); margin-bottom: 2rem;">
+      ⚠ Sem resultados
     </div>
+          <strong>Histórico dos Estados do Processo</strong>
+          <div style="font-size: 0.9rem; color: var(--cor-cinzento); margin-bottom: 2rem;">
+      ⚠ Sem resultados
+    </div>
+        </div>
+
+      </div>
+    </details>
+
   </div>
 </div>
 
+<!-- Ícone SVG -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="icon-info" viewBox="0 0 16 16">
+    <path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm.93-8.588-1 4.3c-.07.3.03.5.3.5.2 0 .5-.07.7-.24l-.09.4c-.29.34-.92.6-1.46.6-.7 0-1-.4-.8-1.3l.74-3.17c.06-.3 0-.4-.29-.47l-.45-.08.08-.38 2.3-.3zM8 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+  </symbol>
+</svg>
 
 
 
