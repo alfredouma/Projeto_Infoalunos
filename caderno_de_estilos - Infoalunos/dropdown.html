@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dropdown com Anchor API</title>
+<style>
+  :root {
+    --cor-primaria: #3399ff;
+    --cor-secundaria: white;
+    --cor-terciaria: #003d7a;
+    --cor-cinzento: #6c757d;
+    --cor-verde: #198754;
+    --cor-vermelho: #dc3545;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    padding: 40px;
+  }
+
+  /* Marca o botão como âncora */
+  #anchor {
+    anchor-name: --menu-toggle;
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  /* Estilo do popover / dropdown */
+  ul[popover] {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    position-anchor: --menu-toggle; /* liga ao anchor */
+    position-area: bottom; /* tenta ficar por baixo da âncora */  
+    position-try-fallbacks: top; /* se não couber em baixo, tenta subir */  
+    width: anchor-size(width); /* largura igual à da âncora */  
+    background-color: var(--cor-secundaria);
+    border: 1px solid var(--cor-cinzento);
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none; /* escondido por padrão */
+    z-index: 100;
+  }
+
+  ul[popover].active {
+    display: block;
+  }
+
+  ul[popover] li a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: var(--cor-terciaria);
+  }
+
+  ul[popover] li a:hover {
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+  }
+
+</style>
+</head>
+<body>
+
+<nav>
+  <button id="anchor" popoveraction="toggle" popovertarget="target">
+    Toggle Dropdown Menu ▾
+  </button>
+  <ul id="target" popover>
+    <li><a href="#">Link 1</a></li>
+    <li><a href="#">Link 2</a></li>
+    <li><a href="#">Link 3</a></li>
+  </ul>
+</nav>
+
+<script>
+  const btn = document.getElementById('anchor');
+  const menu = document.getElementById('target');
+
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('active');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!btn.contains(e.target) && !menu.contains(e.target)) {
+      menu.classList.remove('active');
+    }
+  });
+</script>
+
+</body>
+</html>

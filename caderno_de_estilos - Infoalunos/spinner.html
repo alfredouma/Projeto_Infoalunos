@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Spinner com Root</title>
+  <style>
+    :root {
+      --cor-primaria: #3399ff;
+      --cor-secundaria: white;
+      --cor-terciaria: #003d7a;
+      --cor-cinzento: #6c757d;
+      --cor-verde: #198754;
+      --cor-vermelho: #dc3545;
+      --cor-laranja: #ffa500;
+    }
+
+    body {
+      background-color: var(--cor-cinzento);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .spinner {
+      width: 100px;
+      height: 100px;
+      border: 8px solid var(--cor-terciaria);
+      border-radius: 50%;
+      position: relative;
+      animation: girar 2s linear infinite;
+    }
+
+    .ponto {
+      width: 14px;
+      height: 14px;
+      background-color: var(--cor-verde);
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @keyframes girar {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="spinner">
+    <div class="ponto"></div>
+  </div>
+
+</body>
+</html>

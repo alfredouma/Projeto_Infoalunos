@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Botão com Badge</title>
+
+<style>
+
+    :root {
+        --cor-primaria: #3399ff;   /* botão */
+        --cor-terciaria: #003d7a;  /* badge */
+        --cor-botao-texto: #ffffff;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        padding: 30px;
+    }
+
+    /* Botão principal */
+    .anchor-button {
+        anchor-name: --inbox-button;
+        background: var(--cor-primaria);
+        color: var(--cor-botao-texto);
+        padding: 10px 18px;
+        font-size: 16px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        position: relative;
+    }
+
+    /* Badge ancorado */
+    .anchor-badge {
+        position: absolute;
+        background: var(--cor-terciaria);
+        color: #fff;
+        padding: 4px 8px;
+        border-radius: 50px;
+        font-size: 12px;
+        top: anchor(--inbox-button top);
+        left: anchor(--inbox-button right);
+        translate: -20% -70%;
+    }
+
+</style>
+</head>
+<body>
+
+<h3>Resultado:</h3>
+
+<button type="button" class="anchor-button">
+    Inbox
+    <span class="anchor-badge">99+</span>
+</button>
+
+</body>
+</html>

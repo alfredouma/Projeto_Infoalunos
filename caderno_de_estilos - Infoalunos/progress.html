@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt‑PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barra de Progresso Estilizada</title>
+  <style>
+    :root {
+      --cor-primaria: #3399ff;
+      --cor-secundaria: white;
+      --cor-terciaria: #003d7a;
+      --cor-cinzento: #6c757d;
+      --cor-verde: #198754;
+      --cor-vermelho: #dc3545;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: var(--cor-secundaria);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--cor-terciaria);
+    }
+
+    progress {
+      width: 100%;
+      height: 20px;
+      -webkit-appearance: none;
+      appearance: none;
+      background-color: var(--cor-cinzento);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    /* Track (parte vazia) para WebKit */
+    progress::-webkit-progress-bar {
+      background-color: var(--cor-cinzento);
+      border-radius: 10px;
+    }
+
+    /* Parte preenchida para WebKit */
+    progress::-webkit-progress-value {
+      background-color: var(--cor-primaria);
+      border-radius: 10px;
+    }
+
+    /* Parte preenchida para Firefox */
+    progress::-moz-progress-bar {
+      background-color: var(--cor-primaria);
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <label for="file">Progresso do ficheiro:</label>
+  <progress id="file" max="100" value="70">70%</progress>
+
+</body>
+</html>

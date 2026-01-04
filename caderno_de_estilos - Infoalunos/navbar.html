@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Menu Lateral com Conteúdo</title>
+  <style>
+    :root {
+      --cor-cinzento: #f0f0f0;
+      --cor-texto: #000000;
+      --cor-hover: #ffa500;
+      --cor-borda: #d0d0d0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      display: flex;
+      height: 100vh;
+    }
+
+    .menu-lateral {
+      width: 220px;
+      background-color: var(--cor-cinzento);
+      color: var(--cor-texto);
+      border-right: 1px solid var(--cor-borda);
+      padding-top: 20px;
+    }
+
+    .menu-lateral ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .menu-lateral li {
+      padding: 10px 16px;
+      font-size: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .menu-lateral li:hover {
+      background-color: var(--cor-hover);
+      color: white;
+    }
+
+    .arrow {
+      font-size: 12px;
+    }
+
+    .conteudo {
+      flex: 1;
+      background-color: var(--cor-cinzento);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .caixa {
+      background-color: #e0e0e0;
+      border: 1px solid var(--cor-borda);
+      padding: 20px;
+      border-radius: 6px;
+      color: var(--cor-texto);
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="menu-lateral">
+    <ul>
+      <li>Início <span class="arrow"></span></li>
+      <li>Geral <span class="arrow">▶</span></li>
+      <li>Serviços <span class="arrow">▶</span></li>
+      <li>Concursos <span class="arrow">▶</span></li>
+      <li>Avaliação <span class="arrow">▶</span></li>
+      <li>Creditações <span class="arrow">▶</span></li>
+      <li>Documentos <span class="arrow">▶</span></li>
+      <li>Aula <span class="arrow">▶</span></li>
+      <li>Disciplina <span class="arrow">▶</span></li>
+      <li>Curso <span class="arrow">▶</span></li>
+      <li>Instituição <span class="arrow">▶</span></li>
+      <li>Eleições <span class="arrow"></span></li>
+    </ul>
+  </nav>
+
+
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt‑PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tooltip Info Popover</title>
+  <style>
+    :root {
+      --cor-primaria: #3399ff;
+      --cor-secundaria: white;
+      --cor-terciaria: #003d7a;
+      --cor-cinzento: #6c757d;
+      --cor-verde: #198754;
+      --cor-vermelho: #dc3545;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      background-color: var(--cor-secundaria);
+    }
+
+    /* Botão de informação que funciona como âncora */
+    #info-opener {
+      anchor-name: --info-opener;
+      background-color: var(--cor-primaria);
+      color: var(--cor-secundaria);
+      padding: 8px 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    #info-opener:hover {
+      background-color: var(--cor-terciaria);
+    }
+
+    /* Tooltip / Popover */
+    .info-tooltip[popover] {
+      position: absolute;
+      position-anchor: --info-opener; /* ancora ao botão */
+      position-area: right; /* tenta aparecer à direita */
+      position-try-fallbacks: left; /* se não couber à direita, tenta à esquerda */
+      background-color: var(--cor-primaria);
+      color: var(--cor-secundaria);
+      padding: 5px 10px;
+      border-radius: 4px;
+      white-space: nowrap;
+      margin: 4px;
+      z-index: 10;
+    }
+
+    /* Forma de “seta” */
+    .forma {
+      padding-left: .75rem;
+      clip-path: polygon(
+        100% 0%,
+        100% 100%,
+        5px 100%,
+        5px calc(50% + 5px),
+        0% 50%,
+        5px calc(50% - 5px),
+        5px 0%
+      );
+    }
+  </style>
+</head>
+<body>
+
+  <button id="info-opener" popovertarget="info">Informação</button>
+
+  <div id="info" popover class="info-tooltip forma">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  </div>
+
+</body>
+</html>

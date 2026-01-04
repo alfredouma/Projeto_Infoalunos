@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista Estilizada</title>
+  <style>
+    :root {
+      --cor-primaria: #3399ff;
+      --cor-secundaria: white;
+      --cor-terciaria: #003d7a;
+      --cor-cinzento: #6c757d;
+      --cor-verde: #198754;
+      --cor-vermelho: #dc3545;
+    }
+
+    body {
+      font-family: sans-serif;
+      background-color: #f0f0f0;
+      padding: 40px;
+    }
+
+    ul.lista {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      max-width: 500px;
+    }
+
+    li.item-lista {
+      background-color: var(--cor-secundaria);
+      border: 1px solid #ddd;
+      padding: 16px 20px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .conteudo-texto {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .subtitulo {
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+    .circulo {
+      background-color: var(--cor-primaria);
+      color: white;
+      font-weight: bold;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <ul class="lista">
+    <li class="item-lista">
+      <div class="conteudo-texto">
+        <div class="subtitulo">Subtítulo 1</div>
+        <div>Conteúdo do item da lista</div>
+      </div>
+      <div class="circulo">14</div>
+    </li>
+    <li class="item-lista">
+      <div class="conteudo-texto">
+        <div class="subtitulo">Subtítulo 2</div>
+        <div>Conteúdo do item da lista</div>
+      </div>
+      <div class="circulo">14</div>
+    </li>
+    <li class="item-lista">
+      <div class="conteudo-texto">
+        <div class="subtitulo">Subtítulo 3</div>
+        <div>Conteúdo do item da lista</div>
+      </div>
+      <div class="circulo">14</div>
+    </li>
+  </ul>
+
+</body>
+</html>

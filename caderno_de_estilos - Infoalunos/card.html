@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Cartões de Cores</title>
+  <style>
+    :root {
+      --cor-primaria: #3399ff;
+      --cor-secundaria: white;
+      --cor-terciaria: #003d7a;
+      --cor-cinzento: #6c757d;
+      --cor-verde: #198754;
+      --cor-vermelho: #dc3545;
+    }
+
+    body {
+      font-family: sans-serif;
+      background-color: #f0f0f0;
+      padding: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .card {
+      width: 280px;
+      padding: 20px;
+      border-radius: 10px;
+      color: var(--cor-secundaria);
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .card h3 {
+      margin: 0 0 5px;
+    }
+
+    .card .title {
+      font-size: 0.9em;
+      opacity: 0.8;
+      margin-bottom: 10px;
+    }
+
+    .card .quote {
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+
+    .card.white {
+      background-color: var(--cor-secundaria);
+      color: black;
+    }
+
+    .card.purple {
+      background-color: var(--cor-terciaria);
+    }
+
+    .card.gray {
+      background-color: var(--cor-cinzento);
+    }
+
+    .card.green {
+      background-color: var(--cor-verde);
+    }
+
+    .card.red {
+      background-color: var(--cor-vermelho);
+    }
+
+    .card.blue {
+      background-color: var(--cor-primaria);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card purple">
+    <h3>Daniel</h3>
+    <div class="title">Graduado Verificado</div>
+    <div class="quote">Cor usada: var(--cor-terciaria)</div>
+  </div>
+
+  <div class="card gray">
+    <h3>Jonathan</h3>
+    <div class="title">Graduado Verificado</div>
+    <div class="quote">Cor usada: var(--cor-cinzento)</div>
+  </div>
+
+  <div class="card white">
+    <h3>Kira</h3>
+    <div class="title">Graduada Verificada</div>
+    <div class="quote">Cor usada: var(--cor-secundaria)</div>
+  </div>
+
+  <div class="card red">
+    <h3>Patrick</h3>
+    <div class="title">Graduado Verificado</div>
+    <div class="quote">Cor usada: var(--cor-vermelho)</div>
+  </div>
+
+  <div class="card blue">
+    <h3>Jeanette</h3>
+    <div class="title">Graduada Verificada</div>
+    <div class="quote">Cor usada: var(--cor-primaria)</div>
+  </div>
+
+  <div class="card green">
+    <h3>Lucas</h3>
+    <div class="title">Graduado Verificado</div>
+    <div class="quote">Cor usada: var(--cor-verde)</div>
+  </div>
+
+</body>
+</html>
